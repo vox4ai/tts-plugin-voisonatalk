@@ -1,23 +1,48 @@
 # tts-plugin-voisonatalk
 
+<p align="center">
+  <img src="https://via.placeholder.com/1200x400/1a1a1a/ffffff?text=tts-plugin-voisonatalk" alt="tts-plugin-voisonatalk Banner" width="1200">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/pypi-latest-blue.svg" alt="PyPI version">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/badge/python-3.10%2B-yellow.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg" alt="Maintained">
+</p>
+
+<p align="center">
+  <a href="https://github.com/vox4ai/tts-plugin-voisonatalk">Website</a> •
+  <a href="https://github.com/vox4ai/tts-plugin-voisonatalk/issues">Report Bug</a> •
+  <a href="https://github.com/vox4ai/tts-plugin-voisonatalk/contributing">Contributing</a>
+</p>
+
+---
+
+## 🚀 Overview
+
 [VoiSona Talk](https://voisona.com/talk/) Editor 組み込みの REST API を使用して、本体から音声を発声させるための `tts-plugin-bridge` プラグインです。
 
-## ⚠️ 仕様上の注意
+## ⚠️ 注意事項
+
 このプラグインは **VoiSona Talk 本体（スピーカー）からの直接発声** を目的としています。
 そのため、`synthesize` メソッドの戻り値である `TTSResponse` には **音声データ（audio_data）は含まれません**。
 
 
 ## 📦 インストール
+
 ```bash
 uv add tts-plugin-bridge tts-plugin-voisonatalk
 ```
 
 ## ⚙️ 前提条件
+
 - VoiSona Talk エディタが起動しており、REST API サーバーが有効になっていること。
   - `設定 -> API -> REST API Server` を ON に設定。
 - .envファイルにWindows側のHOST名/Port、Basic 認証（User/Password）を設定。
 
 ## 🖥️ WSL2 からの使用
+
 WSL2 上から Windows 側で動いている VoiSona Talk を呼び出す場合は、`localhost`あるいは Windows 側の IP アドレスを指定する必要があります。
 
 ```python
@@ -29,7 +54,8 @@ skill = TTSSkill(
 )
 ```
 
-## 🧩 使い方
+## 🛠 Usage
+
 ```python
 import asyncio
 from tts_plugin_bridge import TTSSkill
@@ -53,4 +79,5 @@ asyncio.run(main())
 ```
 
 ## 📜 ライセンス
+
 MIT License
